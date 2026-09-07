@@ -12,7 +12,21 @@ const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
-const angularApp = new AngularNodeAppEngine();
+const codespaceName = process.env['CODESPACE_NAME'];
+const forwardingDomain =
+  process.env['GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN'] ?? 'app.github.dev';
+const allowedHosts = codespaceName
+  ? [`${codespaceName}-4200.${forwardingDomain}`]
+  : undefined;
+const angularApp = new AngularNodeAppEngine({
+  allowedHosts,
+  trustProxyHeaders: [
+    'x-forwarded-for',
+    'x-forwarded-host',
+    'x-forwarded-port',
+    'x-forwarded-proto',
+  ],
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.

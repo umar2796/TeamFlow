@@ -1,0 +1,26 @@
+<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #title> {{task.title}} </ng-template>
+    <ng-template #subtitle> {{task.description}} </ng-template>
+    <p>
+        {{task.status}}
+    </p>
+    <p>
+        {{task.priority}}
+    </p>
+   @if(task.assignee ){
+        <p>
+            {{task.assignee}}
+        </p>
+     }
+     @else{
+        <p>
+            Unassigned
+        </p>
+     }
+    <ng-template #footer>
+        <div class="flex gap-4 mt-1">
+            <p-button label="Mark Done" [disabled]="task.status === 'done'" (click)="onMarkDone()" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+            <p-button label="Delete" (click)="onDelete()" class="w-full" styleClass="w-full" />
+        </div>
+    </ng-template>
+</p-card>

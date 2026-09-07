@@ -2,6 +2,20 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
 
+## Setup
+
+Use Node.js 22 for this project. The repository includes a `.nvmrc` file so `nvm use` selects the expected major version on both your laptop and Codespace.
+
+```bash
+cd teamFlow_app
+nvm install
+nvm use
+npm ci
+npm start
+```
+
+Open `http://localhost:4200/` after the development server starts. The `node_modules` folder is intentionally excluded from Git, so run `npm ci` once on each machine after cloning or switching environments. The committed `package-lock.json` keeps dependency versions synchronized.
+
 ## Development server
 
 To start a local development server, run:
