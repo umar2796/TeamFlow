@@ -22,10 +22,12 @@ ngOnInit() {
 
 onStatusChanged(event: { id: number; status: TaskStatus }){
   this.taskService.updateTask(event.id, { status: event.status });
+  this.tasks = this.taskService.getTasks(); // Refresh the task list
   
 }
 
 onTaskDeleted(id: number){
   this.taskService.deleteTask(id);
+  this.tasks = this.taskService.getTasks(); // Refresh the task list
 }
 }
