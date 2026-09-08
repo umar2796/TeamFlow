@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, TaskStatus } from '../../../../models/task.model';
+import { Task, TaskStatus } from '../../../../core/models/task.model';
 import { TaskService } from '../../../../services/task.service';
 import { TaskCardComponent } from '../task-card/task-card.component';
 
