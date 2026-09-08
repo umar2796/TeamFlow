@@ -1,9 +1,11 @@
 @if (tasks.length === 0) {
-      <p>No tasks yet</p>
+         <p class="empty-state">No tasks yet</p>
     }
  @else 
  {
-     @for (task of tasks; track task.id) {
-    <app-task-card [task]="task" (statusChanged)="onStatusChanged($event)" (deleted)="onTaskDeleted($event)"></app-task-card>
-    }
+      <div class="task-grid">
+         @for (task of tasks; track task.id) {
+            <app-task-card [task]="task" (statusChanged)="onStatusChanged($event)" (deleted)="onTaskDeleted($event)"></app-task-card>
+         }
+      </div>
  }

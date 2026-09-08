@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { Task, TaskStatus } from '../../../../core/models/task.model';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -6,7 +7,7 @@ import { CardModule } from 'primeng/card';
 @Component({
   selector: 'app-task-card',
   standalone: true,
-  imports: [ButtonModule, CardModule],
+  imports: [ButtonModule, CardModule, NgClass],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.scss'
 })
@@ -19,7 +20,7 @@ export class TaskCardComponent {
     this.statusChanged.emit({id: this.task.id, status: 'done'});
   }
 
-  onDelete(){
+  onDelete(){  
       this.deleted.emit(this.task.id);
   }
 }

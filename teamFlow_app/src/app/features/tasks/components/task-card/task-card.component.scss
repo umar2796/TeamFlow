@@ -1,0 +1,178 @@
+:host {
+	display: block;
+	width: min(100%, 25rem);
+}
+
+:host ::ng-deep .task-card {
+	height: 100%;
+	overflow: hidden;
+	border-radius: 14px;
+	background: #ffffff;
+	box-shadow: 0 10px 25px rgba(15, 23, 42, 0.07);
+	transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+:host ::ng-deep .task-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 34px rgba(15, 23, 42, 0.12);
+}
+
+:host ::ng-deep .task-card .p-card-header {
+	height: 5px;
+}
+
+:host ::ng-deep .task-card .p-card-body {
+	padding: 1.35rem 1.4rem 1.15rem;
+}
+
+:host ::ng-deep .task-card .p-card-title {
+	margin: 0;
+}
+
+:host ::ng-deep .task-card .p-card-subtitle {
+	margin: 0.65rem 0 0;
+}
+
+:host ::ng-deep .task-card .p-card-footer {
+	padding: 1.2rem 1.4rem 1.4rem;
+}
+
+.card-accent {
+	height: 5px;
+	background: #2563eb;
+}
+
+.status-in-progress .card-accent {
+	background: #f59e0b;
+}
+
+.status-done .card-accent {
+	background: #10b981;
+}
+
+.task-heading h2 {
+	margin: 0.25rem 0 0;
+	color: #516796;
+	font-size: 2.15rem;
+	font-weight: 700;
+	line-height: 1.3;
+}
+
+.task-eyebrow {
+	color: #64748b;
+	font-size: 1.7rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.task-description {
+	display: -webkit-box;
+	overflow: hidden;
+	min-height: 2.7rem;
+	margin: 0;
+	color: #64748b;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+.task-details {
+	display: grid;
+	gap: 0.75rem;
+	margin-top: 1.35rem;
+	padding-top: 1.1rem;
+	border-top: 1px solid #1856a1;
+}
+
+.detail-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	color: #334155;
+	font-size: 1.4rem;
+}
+
+.detail-label {
+	color: #94a3b8;
+	font-weight: 600;
+}
+
+.status-badge,
+.priority-badge {
+	padding: 0.25rem 0.6rem;
+	border-radius: 10px;
+	font-size: 1.3rem;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.status-badge {
+	color: #1d4ed8;
+	background: #dbeafe;
+}
+
+.status-in-progress .status-badge {
+	color: #b45309;
+	background: #fef3c7;
+}
+
+.status-done .status-badge {
+	color: #047857;
+	background: #d1fae5;
+}
+
+.priority-badge {
+	color: #475569;
+	background: #f1f5f9;
+}
+
+.priority-4,
+.priority-5 {
+	color: #b91c1c;
+	background: #fee2e2;
+}
+
+.assignee {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-weight: 600;
+}
+
+.assignee-avatar {
+	display: grid;
+	width: 1.6rem;
+	height: 1.6rem;
+	place-items: center;
+	border-radius: 50%;
+	color: #ffffff;
+	background: #0f766e;
+	font-size: 0.7rem;
+	font-weight: 700;
+}
+
+.task-actions {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.7rem;
+}
+
+:host ::ng-deep .action-button {
+	width: 100%;
+	justify-content: center;
+}
+
+@media (max-width: 420px) {
+	:host ::ng-deep .task-card .p-card-body,
+	:host ::ng-deep .task-card .p-card-footer {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.task-actions {
+		grid-template-columns: 1fr;
+	}
+}

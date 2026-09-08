@@ -8,6 +8,7 @@ import { TaskListComponent } from './features/tasks/components/task-list/task-li
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, TaskListComponent],
+  providers: [TaskListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
